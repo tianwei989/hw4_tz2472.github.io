@@ -1,0 +1,14 @@
+---
+title: "about"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+This is my personal website, and welcome to my world.
+<img src="pic/me.JPG" style="width:75%">
+
+### back to the [index](index.html) page.
+
+

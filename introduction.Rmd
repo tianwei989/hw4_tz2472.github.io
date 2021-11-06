@@ -1,0 +1,22 @@
+---
+title: "Brief introduction"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+I have a bachelor of Science degree from the University of California Santa Barbara, with a major in Financial Mathematics and Statistics. 
+
+I am currently a Master of Science students in Biostatistics at Columbia University.
+
+I have a lovely cat, and her name is Peach, Here is a picture of Peach.
+
+<img src="pic/cat.JPG" style="width:50%">
+
+I enjoy sports, fitness, e-sports and cars.
+
+Here is my CV :
+<embed src="pic/cvv.pdf" width="800px" height="1000px" />
+
+### back to the [index](index.html) page.
