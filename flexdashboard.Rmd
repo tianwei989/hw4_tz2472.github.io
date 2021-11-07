@@ -1,0 +1,69 @@
+---
+title: "flexdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+data("instacart")
+inst_ggplot =
+  instacart %>% 
+  count(aisle) %>% 
+  arrange(n) %>% 
+  filter(n>10000) %>% 
+  mutate(
+    aisle = factor(aisle),
+    aisle = forcats::fct_reorder(aisle, sort(n))) %>% 
+  ggplot(aes(x=n,y=aisle,color = n,colors = "viridis"))+
+  geom_point()+
+  labs(
+    x = "Number of items ordered",
+    y = "Aisle",
+    caption = "Data from the instacart"
+  )+
+  scale_x_continuous(
+    breaks = c(0,20000,40000,60000,80000,100000,120000,140000)
+  )
+
+ggplotly(inst_ggplot)
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+instacart %>% 
+  sample_n(300) %>% 
+  count(department) %>% 
+  mutate(department = fct_reorder(department, n)) %>% 
+  plot_ly( y = ~n, color = ~department, type = "box", colors = "viridis")
+```
+
+### Chart C
+
+```{r}
+instacart %>% 
+    sample_n(200) %>% 
+  count(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis")
+```
+

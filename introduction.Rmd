@@ -19,4 +19,4 @@ I enjoy sports, fitness, e-sports and cars.
 Here is my CV :
 <embed src="pic/cvv.pdf" width="800px" height="1000px" />
 
-### back to the [index](index.html) page.
+### back to the [main](index.html) page.
