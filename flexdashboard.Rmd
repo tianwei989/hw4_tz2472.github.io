@@ -52,9 +52,8 @@ Column {data-width=350}
 ```{r}
 instacart %>% 
   sample_n(300) %>% 
-  count(department) %>% 
-  mutate(department = fct_reorder(department, n)) %>% 
-  plot_ly( y = ~n, color = ~department, type = "box", colors = "viridis")
+  mutate(department = fct_reorder(department, order_number)) %>% 
+  plot_ly( y = ~order_number, color = ~department, type = "box", colors = "viridis")
 ```
 
 ### Chart C
